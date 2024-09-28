@@ -7,7 +7,7 @@ import {
 
 const initializeCarousel = (movies) => {
   const carousel = document.getElementById("movie-carousel");
-  carousel.innerHTML = ""; // Clear any existing content
+  carousel.innerHTML = ""; 
 
   // Add movies to the carousel dynamically
   movies.forEach((movie) => {
