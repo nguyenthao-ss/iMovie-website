@@ -7,12 +7,10 @@ onAuthStateChanged(auth, () => {
 });
 
 window.addEventListener("popstate", () => {
-    console.log("onAuthStateChanged")
   renderRoute();
 });
 
 
 window.addEventListener("hashchange", () => {
-    console.log("onAuthStateChanged")
   renderRoute();
 });

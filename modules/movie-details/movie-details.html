@@ -1,0 +1,110 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="/assets/font-awesome-4.7.0/css/font-awesome.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
+  <link rel="stylesheet" href="/modules/movie-details/movie-details.css" />
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">iMovies</a>
+    <ul class="nav">
+      <li>
+        <a href="#"><i class="fa fa-home"></i></a>
+      </li>
+      <li><a href="#">Adults</a></li>
+      <li><a href="#">Kids</a></li>
+      <li><a href="#">Trend</a></li>
+      <li><a href="#">My List</a></li>
+    </ul>
+    <div class="search">
+      <input type="text" placeholder="Search" />
+      <i class="fa fa-search"></i>
+    </div>
+  </header>
+
+  <!-- Movie Header Information -->
+  <div class="movie-banner">
+    <div class="movie-info">
+      <h1 id="movie-title">Movie Title</h1>
+      <h4>
+        <span id="movie-year">2023</span>
+        <span><i id="movie-rating">12+</i></span>
+        <span id="movie-duration">2h 14min</span>
+        <span id="movie-genre">Romance</span>
+      </h4>
+      <p id="movie-description">
+        A brief description of the movie that provides an overview of the
+        storyline and major characters.
+      </p>
+      <a href="#" class="play">
+        <i class="fa fa-play-circle-o" aria-hidden="true"></i> Watch Trailer
+      </a>
+      <a href="#" class="add-button">
+        <i class="fa fa-plus"></i> Add to My List
+      </a>
+    </div>
+  </div>
+
+  <div class="movie-details">
+    <!-- Episodes Section -->
+    <div class="episodes">
+      <h3>Episodes</h3>
+      <ul class="episode-list">
+        <li class="episode-item">
+          <img
+            src="/assets/images/movies/episode1-thumbnail.jpg"
+            alt="Episode 1"
+          />
+          <div class="episode-info">
+            <h4>Episode 1: Pilot</h4>
+            <p>42 min - A brief overview of the episode content goes here.</p>
+          </div>
+        </li>
+        <li class="episode-item">
+          <img
+            src="/assets/images/movies/episode2-thumbnail.jpg"
+            alt="Episode 2"
+          />
+          <div class="episode-info">
+            <h4>Episode 2: The Journey Begins</h4>
+            <p>45 min - A brief overview of the episode content goes here.</p>
+          </div>
+        </li>
+        <!-- Add more episodes as needed -->
+      </ul>
+    </div>
+
+    <!-- User Comments and Ratings Section -->
+    <div class="comments-ratings">
+      <h3>Ratings & Comments</h3>
+      <div class="rating">
+        <span class="stars"> ★★★★☆ (4.5/5) </span>
+        <p>Based on 1234 reviews</p>
+      </div>
+
+      <div class="comment-box">
+        <textarea placeholder="Add a comment..."></textarea>
+        <button class="submit-comment">Submit</button>
+      </div>
+
+      <div class="comments-list">
+        <div class="comment-item">
+          <strong>User1</strong>
+          <p>Great movie, loved the storyline!</p>
+        </div>
+        <div class="comment-item">
+          <strong>User2</strong>
+          <p>Not bad, but the pacing could have been better.</p>
+        </div>
+        <!-- More comments -->
+      </div>
+    </div>
+  </div>
+
+  <script src="/modules/movie-details/movie-details.js"></script>
+</body>

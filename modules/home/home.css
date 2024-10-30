@@ -131,6 +131,7 @@ header {
 }
 .banner .content h4 span:last-child {
   padding-right: none;
+  border-right: none;
 }
 .banner .content h4 span i {
   background: var(--primary);

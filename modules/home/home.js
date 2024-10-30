@@ -7,7 +7,7 @@ import {
 
 const initializeCarousel = (movies) => {
   const carousel = document.getElementById("movie-carousel");
-  carousel.innerHTML = ""; 
+  carousel.innerHTML = "";
 
   // Add movies to the carousel dynamically
   movies.forEach((movie) => {
@@ -43,6 +43,10 @@ function changeBg(movie) {
   document.getElementById("movie-duration").textContent = movie.duration;
   document.getElementById("movie-genre").textContent = movie.genre;
   document.getElementById("movie-description").textContent = movie.description;
+
+  // Set the href for the watch button to navigate to the details page
+  const watchButton = document.querySelector(".watch-button");
+  watchButton.href = `#/movie/details/${movie.id}`;
 
   content.classList.add("active");
 }
@@ -80,7 +84,9 @@ async function renderHomePage() {
 async function getFirebaseMovies() {
   const moviesCol = collection(db, "movies");
   const movieSnapshot = await getDocs(moviesCol);
-  const movieList = movieSnapshot.docs.map((doc) => doc.data());
+  const movieList = movieSnapshot.docs.map((doc) => {
+    return { id: doc.id, ...doc.data() }; // Include the ID
+  });
   return movieList;
 }
 

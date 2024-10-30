@@ -1,0 +1,225 @@
+/* Common styles */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 40px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+}
+.nav li {
+  list-style: none;
+  margin: 0 10px;
+}
+.nav li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.nav li:hover a {
+  color: var(--primary);
+}
+
+/* Search */
+.search {
+  position: relative;
+  width: 300px;
+  height: 40px;
+}
+.search input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  background: transparent;
+  border: 1 solid rgba(255, 255, 255, 0.5);
+  outline: none;
+  border-radius: 4px;
+  padding: 0 10px 0 45px !important;
+  backdrop-filter: blur(10px);
+}
+.search input::placeholder {
+  color: #ffffff;
+}
+.search i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  padding-right: 10px;
+  color: #ffffff;
+  border-right: 1px solid white;
+  cursor: pointer;
+}
+
+.movie-details {
+  padding: 100px 100px 50px;
+}
+
+/* Movie Banner */
+.movie-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.movie-banner::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.movie-info {
+  position: absolute;
+  padding: 0 100px;
+}
+.movie-info h4 {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  font-size: 30px;
+}
+.movie-info h4 span {
+  padding: 0 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+.movie-info h4 span:first-child {
+  padding-left: 0;
+}
+.movie-info h4 span:last-child {
+  padding-right: none;
+  border-right: none;
+}
+
+.play,
+.add-button {
+  margin-top: 10px;
+  display: inline-block;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 6px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+
+/* Episodes */
+.episodes {
+  margin-top: 50px;
+}
+.episodes h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.episode-list {
+  list-style: none;
+  padding: 0;
+}
+.episode-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.episode-item img {
+  width: 150px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+.episode-info h4 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.episode-info p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Ratings & Comments */
+.comments-ratings {
+  margin-top: 50px;
+}
+.rating {
+  display: flex;
+  align-items: center;
+}
+.rating .stars {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.comment-box {
+  margin-top: 20px;
+}
+.comment-box textarea {
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+}
+.comment-box button {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 6px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.comments-list {
+  margin-top: 30px;
+}
+.comment-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.comment-item strong {
+  font-weight: 600;
+}
+.comment-item p {
+  margin: 5px 0;
+  font-size: 14px;
+}

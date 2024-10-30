@@ -1,5 +1,6 @@
 import { auth, subscriptions } from "./firebase-config.js";
 import { renderHomePage } from "./modules/home/home.js";
+import { renderMovieDetails } from "./modules/movie-details/movie-details.js";
 
 const routes = {
   "/": {
@@ -18,23 +19,24 @@ const routes = {
     body: "./modules/auth/register.html",
     requireAuth: false,
   },
-  "/movie/:id/detail": {
-    body: "./modules/movies/movie-details.html",
-    requireAuth: true,
+  "/movie/details/:id": {
+    body: "./modules/movie-details/movie-details.html",
+    requireAuth: false,
+    script: async () => {
+      // Fetch movies and initialize carousel after page loads
+      await renderMovieDetails(); // This handles the carousel and movie initialization
+    },
   },
-  "/movie/:id/player": {
-    body: "./modules/movies/movie-player.html",
-    requireAuth: true,
-  },
+  // "/movie/:id/player": {
+  //   body: "./modules/movie-details/movie-player.html",
+  //   requireAuth: false,
+  // },
 };
-
 const isMatchRoute = (route, pathname) => {
   const parsed = route.replace(/\/:[^\/]+/gm, "/[^\\/]+");
 
   const regex = new RegExp(`^${parsed}\\/?$`, "gm");
   const isMatching = regex.test(pathname);
-
-  let params = {};
 
   if (isMatching) {
     const routeMatches = route.match(/\/[^\\\/]+/gm) || [];
